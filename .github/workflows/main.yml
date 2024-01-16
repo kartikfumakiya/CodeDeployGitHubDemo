@@ -15,7 +15,7 @@ jobs:
 
     - name: Copy files to EC2
       run: |
-        pscp -r -i ${{ secrets.C:\kartikfumakiya.ppk }} ${{ github.workspace }}\* ${{ secrets.Administrator }}@${{ secrets.10.0.1.176 }}:${{ secrets.C:\inetpub\wwwroot }}
+        pscp -r -i ${{ secrets.kartikfumakiya }} ${{ github.workspace }}\* ${{ secrets.Administrator }}@${{ secrets.10.0.1.176 }}:${{ secrets.C:\inetpub\wwwroot }}
 
     - name: Restart IIS
       run: |
