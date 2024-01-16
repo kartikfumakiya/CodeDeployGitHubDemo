@@ -1,12 +1,22 @@
-version: 0.0
-os: windows
-files:
-  - source: \
-    destination: C:\inetpub\wwwroot
-hooks:
-  BeforeInstall:
-  - location: \before-install.ps1
-    timeout: 900
-  AfterInstall:
-  - location: \after-install.ps1
-    timeout: 900
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Copy files to EC2
+      run: |
+        pscp -r -i ${{ secrets.C:\kartikfumakiya.ppk }} ${{ github.workspace }}\* ${{ secrets.Administrator }}@${{ secrets.10.0.1.176 }}:${{ secrets.C:\inetpub\wwwroot }}
+
+    - name: Restart IIS
+      run: |
+        plink -i ${{ secrets.C:\kartikfumakiya.ppk }} ${{ secrets.Administrator }}@${{ secrets.10.0.1.176 }} 'iisreset'
