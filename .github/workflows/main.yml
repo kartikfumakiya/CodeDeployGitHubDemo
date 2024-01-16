@@ -1,22 +1,2 @@
-name: Deploy to EC2
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    runs-on: windows-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Copy files to EC2
-      run: |
-        pscp -r -i ${{ secrets.kartikfumakiya }} ${{ github.workspace }}/.* ${{ secrets.Administrator }}@${{ secrets.kartikfumakiya }}:${{ secrets.KARTIKFUMAKIYA }}
-
-    - name: Restart IIS
-      run: |
-        plink -i ${{ secrets.kartikfumakiya }} ${{ secrets.Administrator }}@${{ secrets_10_0_1_176 }} 'iisreset'
+- name: On-demand self-hosted AWS EC2 runner for GitHub Actions with windows support           
+  uses: crunchy234/ec2-github-runner@windows-support-13
