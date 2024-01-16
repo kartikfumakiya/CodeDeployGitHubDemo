@@ -1,2 +1,1 @@
-- name: On-demand self-hosted AWS EC2 runner for GitHub Actions with windows support           
-  uses: crunchy234/ec2-github-runner@windows-support-13
+
