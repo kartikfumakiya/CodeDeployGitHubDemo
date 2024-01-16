@@ -15,8 +15,8 @@ jobs:
 
     - name: Copy files to EC2
       run: |
-        pscp -r -i ${{ secrets.kartikfumakiya }} ${{ github.github/workflows}}\* ${{ secrets.Administrator }}@${{ secrets.10.0.1.176 }}:${{ secrets.KARTIKFUMAKIYA }}
+        pscp -r -i ${{ secrets.kartikfumakiya }} ${{ github.workspace }}/.* ${{ secrets.Administrator }}@${{ secrets.10.0.1.176 }}:${{ secrets.KARTIKFUMAKIYA }}
 
     - name: Restart IIS
       run: |
-        plink -i ${{ secrets.C:\kartikfumakiya.ppk }} ${{ secrets.Administrator }}@${{ secrets.10.0.1.176 }} 'iisreset'
+        plink -i ${{ secrets.kartikfumakiya }} ${{ secrets.Administrator }}@${{ secrets.10.0.1.176 }} 'iisreset'
