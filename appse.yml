@@ -1,0 +1,34 @@
+name: Deploy to AWS EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install AWS CLI
+      run: |
+        echo "Installing AWS CLI..."
+        # Add commands to install AWS CLI on your self-hosted runner
+        # For example, you might need to download and install the AWS CLI MSI.
+
+    - name: Copy files to EC2 instance
+      run: |
+        echo "Copying files to EC2 instance..."
+        scp -o StrictHostKeyChecking=no -r ./path/to/your/code/* ec2-user@10.0.1.176:C:\inetpub\wwwroot\
+
+    - name: Remote into EC2 instance
+      run: |
+        echo "Restarting App Pool on EC2 instance..."
+        ssh -o StrictHostKeyChecking=no ec2-user@10.0.1.176 'powershell -Command "Restart-WebAppPool -Name DefaultAppPool"'
+
+    - name: Remote into EC2 instance
+      run: |
+        echo "Restarting IIS site on EC2 instance..."
+        ssh -o StrictHostKeyChecking=no ec2-user@10.0.1.176 'powershell -Command "Restart-WebSite -Name Default Web Site"'
