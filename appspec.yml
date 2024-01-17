@@ -1,7 +1,7 @@
 version: 0.0
 os: windows
 files:
-  - source: CodeDeployGitHubDemo/
+  - source: https://github.com/kartikfumakiya/CodeDeployGitHubDemo.git
     destination: C:\inetpub\wwwroot
 hooks:
   BeforeInstall:
