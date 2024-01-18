@@ -23,5 +23,5 @@ do{
     }
 while (!$success -and $currentRetry -le 4)
 
-WriteHost "Stop IIS"
+Write-Host "Stop IIS"
 & iisreset /Stop
