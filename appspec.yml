@@ -5,8 +5,5 @@ files:
     destination: c:\inetpub\wwwroot
 hooks:
   BeforeInstall:
-    - location: \before-iis-install-stop.bat
+    - location: \Write before-iis-install-stop.bat
       timeout: 900
-  AfterInstall:
-    - location: \after-iis-install-start.bat
-      timeout: 180
