@@ -2,11 +2,11 @@ version: 0.0
 os: windows
 files:
   - source: \index.html
-    destination: C:\inetpub\wwwroot\
+    destination: c:\inetpub\wwwroot
 hooks:
   BeforeInstall:
-  - location: \before-install.ps1
-    timeout: 900
+    - location: \before-iis-install-stop.bat
+      timeout: 900
   AfterInstall:
-  - location: \after-install.ps1
-    timeout: 900
+    - location: \after-iis-install-start.bat
+      timeout: 180
