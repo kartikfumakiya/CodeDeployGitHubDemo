@@ -1,9 +1,16 @@
 version: 0.0
 os: windows
 files:
-  - source: \index.html
-    destination: c:\inetpub\wwwroot
+  - source: /
+    destination: C:\inetpub\wwwroot
+
 hooks:
   BeforeInstall:
-    - location: \Write before-iis-install-stop.bat
-      timeout: 900
+    - location: scripts/stop_iis.ps1
+      timeout: 300
+      runas: Administrator
+
+  AfterInstall:
+    - location: scripts/start_iis.ps1
+      timeout: 300
+      runas: Administrator
