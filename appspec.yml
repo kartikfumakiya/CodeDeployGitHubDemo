@@ -1,21 +1,5 @@
 version: 0.0
 os: windows
 files:
-  - source: /
+  - source: \CodeDeployGitHubDemo
     destination: C:\inetpub\wwwroot
-
-permissions:
-  - object: C:\inetpub\wwwroot
-    pattern: '**'
-    owner: Administrators
-    group: Administrators
-hooks:
-  BeforeInstall:
-    - location: \stop_iis.ps1
-      timeout: 300
-      runas: Administrator
-
-  AfterInstall:
-    - location: \start_iis.ps1
-      timeout: 300
-      runas: Administrator
