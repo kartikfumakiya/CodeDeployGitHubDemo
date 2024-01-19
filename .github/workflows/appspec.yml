@@ -14,5 +14,5 @@ jobs:
  
     - name: Copy file to IIS server
       run: |
-       Source: "C:\actions-runner\_work\CodeDeployGitHubDemo\CodeDeployGitHubDemo"
-       Destination: "C:\inetpub\wwwroot"
+       source: "C:\actions-runner\_work\CodeDeployGitHubDemo\CodeDeployGitHubDemo"
+       destination: "C:\inetpub\wwwroot"
