@@ -1,6 +1,6 @@
 version: 0.0
 os: windows
 files:
-  - source: /
+  - source: \ .iis
     destination: C:\inetpub\wwwroot
     runs-on: self-hosted
