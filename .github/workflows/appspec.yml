@@ -16,3 +16,4 @@ jobs:
       run: |
         $destinationPath = "C:\inetpub\wwwroot"
         Copy-Item -Path ".github/workflows/index.html" -Destination $destinationPath -Force
+        Copy-Item -Path ".github/workflows/style.css" -Destination $destinationPath -Force
