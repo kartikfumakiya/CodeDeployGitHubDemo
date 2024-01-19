@@ -1,5 +1,5 @@
 version: 0.0
 os: windows
 files:
-  - source: C:\actions-runner\run.cmd
+  - source: actions-runner /index.html
     destination: C:\inetpub\wwwroot
