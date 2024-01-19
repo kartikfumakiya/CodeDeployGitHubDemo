@@ -15,4 +15,4 @@ jobs:
 
     - name: Copy files to IIS server
       run: |
-        Copy-Item -Path "C:\actions-runner\_work\CodeDeployGitHubDemo\CodeDeployGitHubDemo\*" -Destination "C:\inetpub\wwwroot" -Recurse -Force
+        Get-ChildItem -Path "C:\actions-runner\_work\CodeDeployGitHubDemo\CodeDeployGitHubDemo" | ForEach-Object { Copy-Item $_.FullName -Destination "C:\inetpub\wwwroot" -Recurse -Force }
