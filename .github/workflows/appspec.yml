@@ -3,4 +3,4 @@ os: windows
 files:
   - source: \
     destination: C:\inetpub\wwwroot
-    
+    runs-on: self-hosted
