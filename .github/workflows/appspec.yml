@@ -13,6 +13,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Copy file to IIS server
+    - name: Copy files to IIS server
       run: |
-        Copy-Item -Path "C:\actions-runner\_work\CodeDeployGitHubDemo\CodeDeployGitHubDemo\" -Destination "C:\inetpub\wwwroot" -Recurse -Force
+        Copy-Item -Path "C:\actions-runner\_work\CodeDeployGitHubDemo\CodeDeployGitHubDemo\*" -Destination "C:\inetpub\wwwroot" -Recurse -Force
