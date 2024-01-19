@@ -15,4 +15,4 @@ jobs:
 
     - name: Copy file to IIS server
       run: |
-        Copy-Item -Path "C:\actions-runner\_work\CodeDeployGitHubDemo\CodeDeployGitHubDemo" -Destination "C:\inetpub\wwwroot" -Recurse -Force
+        Copy-Item -Path "C:\actions-runner\_work\CodeDeployGitHubDemo\CodeDeployGitHubDemo\" -Destination "C:\inetpub\wwwroot" -Recurse -Force
