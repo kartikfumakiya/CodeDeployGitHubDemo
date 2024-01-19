@@ -1,6 +1,22 @@
 version: 0.0
 os: windows
-files:
-  - source: \
-    destination: C:\inetpub\wwwroot
+name: Copy to IIS Server
+ 
+on:
+  push:
+    branches:
+      - main
+ 
+jobs:
+  copy_to_iis:
     runs-on: self-hosted
+ 
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+ 
+    - name: Copy file to IIS server
+      run: |
+        $destinationPath = "C:\inetpub\wwwroot"
+        Copy-Item -Path "/.github/workflows/" 
+- Destination: $destinationPath -Force
