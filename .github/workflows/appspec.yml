@@ -1,18 +1,18 @@
 name: Copy to IIS Server
+
 on:
   push:
     branches:
       - main
- 
+
 jobs:
   copy_to_iis:
     runs-on: self-hosted
- 
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
- 
+
     - name: Copy file to IIS server
       run: |
-       source "C:\actions-runner\_work\CodeDeployGitHubDemo\CodeDeployGitHubDemo"
-       destination = "C:\inetpub\wwwroot"
+        Copy-Item -Path "C:\actions-runner\_work\CodeDeployGitHubDemo\CodeDeployGitHubDemo" -Destination "C:\inetpub\wwwroot" -Recurse -Force
