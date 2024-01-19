@@ -1,5 +1,3 @@
-version: 0.0
-os: windows
 name: Copy to IIS Server
 on:
   push:
