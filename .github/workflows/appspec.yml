@@ -1,7 +1,6 @@
 version: 0.0
 os: windows
 name: Copy to IIS Server
- 
 on:
   push:
     branches:
@@ -18,5 +17,5 @@ jobs:
     - name: Copy file to IIS server
       run: |
         $destinationPath = "C:\inetpub\wwwroot"
-        Copy-Item -Path "/.github/workflows/" 
+        Copy-Item -Path ".github/workflows" 
 - Destination: $destinationPath -Force
